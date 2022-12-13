@@ -3,18 +3,12 @@
 #include <math.h>
 using namespace std;
 
-/// <summary>
-/// 物体の定義
-/// </summary>
 class Solid {
 public:
 	virtual double GetVolume() = 0;
 	virtual double GetSurface() = 0;
 };
 
-/// <summary>
-/// 箱型
-/// </summary>
 class Box :Solid {
 private:
 	double width;
@@ -29,6 +23,15 @@ public:
 		this->width = width;
 		this->height = height;
 		this->depth = depth;
+	}
+	double GetWidth() {
+		return width;
+	}
+	double GetHeight() {
+		return height;
+	}
+	double GetDepth() {
+		return depth;
 	}
 	double GetVolume() {
 		return width * height * depth;
@@ -50,6 +53,12 @@ public:
 		this->radius = radius;
 		this->height = height;
 	}
+	double GetRadius() {
+		return radius;
+	}
+	double Getheight() {
+		return height;
+	}
 	double GetVolume() {
 		return M_PI * radius * radius * height;
 	}
@@ -68,6 +77,12 @@ public:
 		double height) { //高さ
 		this->radius = radius;
 		this->height = height;
+	}	
+	double GetRadius() {
+		return radius;
+	}
+	double Getheight() {
+		return height;
 	}
 	double GetVolume() {
 		return M_PI * radius * radius * height / 3;
@@ -85,6 +100,9 @@ public:
 	Sphere(
 		double radius) { //半径
 		this->radius = radius;
+	}
+	double GetRadius() {
+		return radius;
 	}
 	double GetVolume() {
 		return 4 / 3 * M_PI * radius * radius;
